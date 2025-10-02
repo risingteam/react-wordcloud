@@ -39,15 +39,11 @@ function ReactWordCloud({
   words,
   ...rest
 }) {
-  const minSize = useMemo(
-    () => minSizeProp || DEFAULT_MIN_SIZE,
-    [minSizeProp]
-  );
+  const minSize = useMemo(() => minSizeProp || DEFAULT_MIN_SIZE, [minSizeProp]);
 
-  const svgAttributes = useMemo(
-    () => options.svgAttributes,
-    [options.svgAttributes]
-  );
+  const svgAttributes = useMemo(() => options.svgAttributes, [
+    options.svgAttributes,
+  ]);
 
   const [ref, selection, size] = useResponsiveSvgSelection(
     minSize,
